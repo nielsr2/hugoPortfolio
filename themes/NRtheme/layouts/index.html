@@ -1,4 +1,7 @@
 {{ partial "header.html" . }}
-{{.Title}}
-{{.Content}}
-<link rel="stylesheet" href="{{.Site.BaseURL}}css/normalize.css">
+<main>
+ {{.Title}} {{.Content}}
+</main>
+
+
+{{ partial "footer.html" . }}

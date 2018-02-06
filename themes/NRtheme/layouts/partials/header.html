@@ -1,15 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
 
-<!-- <title>New HMTL document by NewJect</title> -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- <title>New HMTL document by NewJect</title> -->
 
 </head>
+
 <body>
-<link rel="stylesheet" href="{{.Site.BaseURL}}css/style.css">
-<link rel="stylesheet" href="{{.Site.BaseURL}}css/normalize.css">
+  <!--  STYLESHEETS   -->
+  <link rel="stylesheet" href="{{.Site.BaseURL}}css/style.css">
+  <link rel="stylesheet" href="{{.Site.BaseURL}}css/normalize.css">
+  <link rel="stylesheet" href="{{.Site.BaseURL}}css/typeplate.css">
+  <link rel="stylesheet" href="{{.Site.BaseURL}}css/flexboxgrid.min.css">
+
+  <link rel="stylesheet" href="{{.Site.BaseURL}}css/themes/default/default.css">
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+  <link rel="stylesheet" href="{{.Site.BaseURL}}css/nivo-lightbox.min.css" type="text/css" />
+  <link rel="stylesheet" href="{{.Site.BaseURL}}css/themes/default/default.css" type="text/css" />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="{{.Site.BaseURL}}js/nivo-lightbox.min.js"></script>
+  <!--  SCRIPTS   -->
+
+
+
+  <!-- sidebar start -->
+  <nav class="sidebar-nav">
+    {{ $currentPage := . }} {{ range .Site.Menus.main }}
+    <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent " main " .) ($currentPage.HasMenuCurrent "main " .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a> {{ end }}
+  </nav>
+  <!-- <script src="{{.Site.BaseURL}}js/jquery-3.3.1.js"></script> -->
+  <!-- <script src="{{.Site.BaseURL}}js/nivo-lightbox.min.js"></script> -->
+  <script>
+    $(document).ready(function() {
+      $('a').nivoLightbox();
+      console.log("nivo - ran");
+    });
+  </script>
