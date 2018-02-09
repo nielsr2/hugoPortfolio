@@ -2,6 +2,7 @@
 title: "Index"
 date: 2018-02-05T10:37:01+01:00
 draft: true
+layout: abouttemp
 ---
 
 [![platyyy](imgs/plat-thumb.jpg)](imgs/plat-large.jpg)

@@ -24,22 +24,33 @@
   <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
   <link rel="stylesheet" href="{{.Site.BaseURL}}css/nivo-lightbox.min.css" type="text/css" />
   <link rel="stylesheet" href="{{.Site.BaseURL}}css/themes/default/default.css" type="text/css" />
+  <link rel="stylesheet" href="{{.Site.BaseURL}}css/materialize.css" type="text/css" />
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   <script src="{{.Site.BaseURL}}js/nivo-lightbox.min.js"></script>
+
+
   <!--  SCRIPTS   -->
 
 
+  <div id="perspective" class="perspective effect-moveleft">
+  	<div class="container">
+  		<div class="wrapper"><!-- wrapper needed for scroll -->
+  			<!-- ... -->
+        <!-- <div class="main clearfix"> -->
 
+<button id="showMenu">Show Menu</button>
   <!-- sidebar start -->
-  <nav class="sidebar-nav">
-    {{ $currentPage := . }} {{ range .Site.Menus.main }}
-    <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent " main " .) ($currentPage.HasMenuCurrent "main " .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a> {{ end }}
-  </nav>
+  <!-- <nav class="sidebar-nav"> -->
+    <!-- {{ $currentPage := . }} {{ range .Site.Menus.main }} -->
+    <!-- <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent " main " .) ($currentPage.HasMenuCurrent "main " .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a> {{ end }} -->
+  <!-- </nav> -->
   <!-- <script src="{{.Site.BaseURL}}js/jquery-3.3.1.js"></script> -->
   <!-- <script src="{{.Site.BaseURL}}js/nivo-lightbox.min.js"></script> -->
   <script>
     $(document).ready(function() {
       $('a').nivoLightbox();
       console.log("nivo - ran");
+      $('.carousel').carousel();
+      console.log("CARO READY");
     });
   </script>

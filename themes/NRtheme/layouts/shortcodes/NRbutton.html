@@ -1,0 +1,43 @@
+<button class="NRbuttons">{{ index .Params 0}}</button>
+<!-- href="{{ index .Params 1}}" -->
+<style>
+  .NRbuttons {
+    color: white;
+    background-color: black;
+    font-family: monospace;
+    /* width: 100vh; */
+    /* height: 200%; */
+  }
+</style>
+
+<script>
+  $(".NRbuttons").on('click', function() {
+        // this.textContent = "WHAT";
+        // this.textContext = "afafa";
+        console.log("thissssclick", this.textContent);
+        let text = this.textContent;
+        console.log("textlenght", text.length);
+        let butt = this;
+        let arr = "";
+        for (i = 0; i < 10; i++) {
+          setTimeout(function() {
+              arr = "";
+              text.split("").forEach(function(char) {
+                var possible = "#€%&/)=????*'@@@@§$$$$ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                char = possible.charAt(Math.floor(Math.random() * possible.length));
+
+                arr = arr.concat(char);
+                console.log(typeof(char), arr, butt);
+                // this.textContent = arr;
+              })
+              butt.textContent = arr;
+            }, i * 50);
+
+          }
+          // butt.textContent = "submitted";
+        })
+      // document.querySelector('.NRbuttons').on
+</script>
+
+<script>
+</script>

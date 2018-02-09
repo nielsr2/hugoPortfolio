@@ -1,4 +1,15 @@
 
+</div><!-- wrapper -->
+</div><!-- /container -->
+<nav class="outer-nav right vertical">
+  {{ $currentPage := . }} {{ range .Site.Menus.main }}
+  <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent " main " .) ($currentPage.HasMenuCurrent "main " .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a> {{ end }}
+</nav>
+</div><!-- /perspective -->
+<script src="{{.Site.BaseURL}}js/classie.js"></script>
+<script src="{{.Site.BaseURL}}js/modernizr.custom.25376.js"></script>
+<script src="{{.Site.BaseURL}}js/menu.js"></script>
+<script src="{{.Site.BaseURL}}js/materialize.min.js"></script>
 </body>
 
 </html>
